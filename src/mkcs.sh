@@ -49,6 +49,9 @@ Run() {
 		local D_CLS='Human'
 		[ -z "$PJ" ] && PJ="$D_PJ" || :;
 		[ -z "$CLS" ] && CLS="$D_CLS" || :;
+		Throw() { [ "Test" = "$1" ] && Error "$2は'Test'にできません。dotnet testするとエラーになります。他の名前を使用してください。" || :;}
+		Throw "$PJ" "[PJ]"
+		Throw "$CLS" "[CLS]"
 		Debug "PJ:$PJ"
 		Debug "CLS:$CLS"
 		Debug "IS_RUN_TEST:$IS_RUN_TEST"

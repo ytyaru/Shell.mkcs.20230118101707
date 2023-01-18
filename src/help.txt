@@ -24,8 +24,8 @@ Flags:
   -t|--test    dotnet test コマンドも実行する
   -d|--debug   デバッグ表示する
 Arguments:
-  [PJ]  プロジェクト名　既定値CsPj{YYYYMMDDHHmmss}
-  [CLS] クラス名　　　　既定値Human
+  [PJ]  プロジェクト名　既定値CsPj{YYYYMMDDHHmmss}  禁止値Test
+  [CLS] クラス名　　　　既定値Human                 禁止値Test
 SubCommands:
   -h|--help    ヘルプ
   -v|--version バージョン
