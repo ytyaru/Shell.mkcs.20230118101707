@@ -1,0 +1,34 @@
+${SUMMARY}	${VERSION}
+Details:
+  dotnetコマンドでクラスライブラリとNUnitのプロジェクトを作り、ソリューションで関連付け、テンプレートファイルをコピー・リネームし、コード内の名前を指定したプロジェクト名とクラス名に変更する。
+  出力するディレクトリ構造は以下。
+    [PJ]/
+        [PJ].sln
+        Source/
+            [PJ].csproj
+            [CLS].cs
+            bin/../{PJ}.dll
+        Test/
+            [PJ].csproj
+            [CLS].cs
+            bin/../Test.dll
+  テンプレートファイルパスは以下。
+    $HERE/tpl/Human.cs
+    $HERE/tpl/Test.cs
+  テンプレート生成に以下moコマンドを使用している。事前にインストールしておくこと。
+    https://github.com/tests-always-included/mo
+Usage:
+  ${THIS_NAME} [PJ] [CLS]
+Arguments:
+  [PJ]  プロジェクト名　既定値CsPj{YYYYMMDDHHmmss}
+  [CLS] クラス名　　　　既定値Human
+Parameters:
+  -h|--help    ヘルプ
+  -v|--version バージョン
+  -t|--test    dotnet test コマンドも実行する
+Examples:
+  ${THIS_NAME}
+  ${THIS_NAME} MyPj
+  ${THIS_NAME} MyPj MyCls
+  ${THIS_NAME} -h
+  ${THIS_NAME} -v
