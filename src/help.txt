@@ -7,7 +7,7 @@ Details:
         Source/
             [PJ].csproj
             [CLS].cs
-            bin/../{PJ}.dll
+            bin/../[PJ].dll
         Test/
             [PJ].csproj
             [CLS].cs
@@ -18,17 +18,25 @@ Details:
   テンプレート生成に以下moコマンドを使用している。事前にインストールしておくこと。
     https://github.com/tests-always-included/mo
 Usage:
-  ${THIS_NAME} [PJ] [CLS]
+  ${THIS_NAME} [Flags] [PJ] [CLS]
+  ${THIS_NAME} [SubCommands]
+Flags:
+  -t|--test    dotnet test コマンドも実行する
+  -d|--debug   デバッグ表示する
 Arguments:
   [PJ]  プロジェクト名　既定値CsPj{YYYYMMDDHHmmss}
   [CLS] クラス名　　　　既定値Human
-Parameters:
+SubCommands:
   -h|--help    ヘルプ
   -v|--version バージョン
-  -t|--test    dotnet test コマンドも実行する
 Examples:
   ${THIS_NAME}
   ${THIS_NAME} MyPj
   ${THIS_NAME} MyPj MyCls
+  ${THIS_NAME} -t
+  ${THIS_NAME} -t MyPj
+  ${THIS_NAME} -t MyPj MyCls
+  ${THIS_NAME} -t -d MyPj MyCls
+  ${THIS_NAME} -td MyPj MyCls
   ${THIS_NAME} -h
   ${THIS_NAME} -v
