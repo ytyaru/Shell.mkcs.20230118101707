@@ -15,8 +15,9 @@ Details:
   テンプレートファイルパスは以下。
     $HERE/tpl/Human.cs
     $HERE/tpl/Test.cs
-  テンプレート生成に以下moコマンドを使用している。事前にインストールしておくこと。
-    https://github.com/tests-always-included/mo
+  事前にインストールすべきものは以下。
+    テンプレート生成コマンド: https://github.com/tests-always-included/mo
+    dotnetコマンド: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
 Usage:
   ${THIS_NAME} [Flags] [PJ] [CLS]
   ${THIS_NAME} [SubCommands]
