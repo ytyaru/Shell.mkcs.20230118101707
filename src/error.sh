@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 Error() { L=$BASH_LINENO; Highlight $L BR 'ERROR' "$@"; exit $L; }
 Success() { Highlight $BASH_LINENO BG '' "$@"; }
-Debug() { Highlight $BASH_LINENO BB 'DEBUG' "$@"; }
+Debug() { [ -n "$DEBUG" ] && Highlight $BASH_LINENO BB 'DEBUG' "$@" || :; }
 Warn() { Highlight $BASH_LINENO BY 'WARN' "$@"; }
 Highlight() { #$1:$BASH_LINENO, $2:Color(R,G,B,Y,C,M,K,W,B*...), $3:Header, $4...:Message
 	local L="$1"
